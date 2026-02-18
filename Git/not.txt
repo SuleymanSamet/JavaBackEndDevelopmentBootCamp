@@ -5,6 +5,9 @@ git add . = tüm dosyaları takip et
 
 !! bir işlem %100 olmadan commit edilmez
 
+class dosyalarını github göndermiyoruz java dosyalarını gonderiyoruz
+git ignore ile hangi dosyaların takip edilip edilmeyecegini işaretliyoruz
+
 git add .
 
 git commit -m "Notlar buraya"
