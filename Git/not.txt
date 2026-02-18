@@ -1,0 +1,9 @@
+git status = git kontrolu git varmı yok mu
+git init = git oluşturma 
+git add (dosya adı) = sadece o dosyayı takıp et
+git add . = tüm dosyaları takip et
+
+!! bir işlem %100 olmadan commit edilmez
+public genel 
+private özel 
+
