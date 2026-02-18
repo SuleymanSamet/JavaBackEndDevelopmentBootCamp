@@ -47,4 +47,4 @@ Amaç yalnızca kod yazmayı öğretmek değil, aynı zamanda yazılım mantığ
 ---
 
 ## 📜 Lisans
-Bu proje **MIT lisansı** ile sunulmaktadır.
+Bu proje [MIT Lisansı](LICENSE) ile sunulmaktadır.
