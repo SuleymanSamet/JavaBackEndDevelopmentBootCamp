@@ -4,6 +4,18 @@ git add (dosya adı) = sadece o dosyayı takıp et
 git add . = tüm dosyaları takip et
 
 !! bir işlem %100 olmadan commit edilmez
+
+git add .
+
+git commit -m "Notlar buraya"
+
+git remote add origin (github linki)
+
+git push -u origin (branch adı)
+
+private projelerin masterına dahil olmamalıyız 
+
 public genel 
 private özel 
+
 
