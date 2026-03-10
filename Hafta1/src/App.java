@@ -18,7 +18,9 @@ public class App {
         System.out.println("Min: " + enKucukBul(notlar));
     }
 
-    public static double hesaplaOrtalama(int[] dizi) {
+    publicpublic App() {
+    }
+ static double hesaplaOrtalama(int[] dizi) {
         int toplam = 0;
         for (int sayi : dizi) {
             toplam += sayi;
