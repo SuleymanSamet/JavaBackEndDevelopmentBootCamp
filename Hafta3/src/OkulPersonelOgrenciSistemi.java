@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 class Kisi{
     private String ad;
     private String soyad;
@@ -30,7 +31,8 @@ class Kisi{
             System.out.println("Hatalı işlem yaptınız");
         }
     }
-    public void bilgileriGöster(){
+    
+    public void bilgileriGoster(){
         System.out.println("Çalışan ad:"+getAd()+" soyad:"+getSoyad());
     }
 }
@@ -39,6 +41,7 @@ class Ogrenci extends Kisi{
     public static int ogrenciSayisi=0;
     public Ogrenci(String ad,String soyad,int not){
         super(ad, soyad);
+        setNot(not); 
         ogrenciSayisi++;
     }
     public int getNot(){
@@ -52,6 +55,7 @@ class Ogrenci extends Kisi{
             System.out.println("Hata : not 0-100 arasında olmalı not 0 olarak atandı");
         }
     }
+    @Override
     public void bilgileriGoster(){
         System.out.println("Öğrenci : ad:"+getAd()+" Soyad :"+getSoyad()+"notu :"+getNot());
     }
@@ -72,20 +76,31 @@ class Ogretmen extends Kisi{
             System.out.println("Öğretmen : ad:"+getAd()+"Soyad : "+getSoyad()+" Branş:"+getBrans());
         }
     }
+    @Override
+    public void bilgileriGoster(){
+        System.out.println("Öğretmen : ad:"+getAd()+"Soyad : "+getSoyad()+" Branş:"+getBrans());
+    }
 }
 public class OkulPersonelOgrenciSistemi {
     public static void main(String[] args) {
         Kisi hademe=new Kisi("Mehmet", "Uzun");
         Ogrenci ogrenci=new Ogrenci("Süleyman", "Yumusak", 30);
         Ogretmen ogretmen=new Ogretmen("Engin", "Kısa", "Yazılım");
+        hademe.bilgileriGoster();
+        ogrenci.bilgileriGoster();
+        ogretmen.bilgileriGoster();
+        /* 
         ArrayList<Kisi> arrayList=new ArrayList<>();
         arrayList.add(ogretmen);
         arrayList.add(ogrenci);
         arrayList.add(hademe);
+        */
 
+        /* 
         for(Kisi kisi:arrayList){
-            kisi.bilgileriGöster();
+            kisi.bilgileriGoster();
         }
+            */
     }
     
 }

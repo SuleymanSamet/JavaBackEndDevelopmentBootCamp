@@ -22,3 +22,4 @@ target/
 # İşletim sistemi dosyaları
 .DS_Store
 Thumbs.db
+/.metadata/
