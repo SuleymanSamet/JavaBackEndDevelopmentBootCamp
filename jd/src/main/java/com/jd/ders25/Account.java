@@ -8,45 +8,67 @@ public class Account {
     private double balance;
     private boolean isActive;
 
+    private final static int OWNER_NAME_MIN_LENGTH=3;
+
     public Account(String ownerName){
         this.accountNumber=UUID.randomUUID().toString();
-        if(ownerName==null){
-            System.out.println("Hesap sahip adı null olamaz");
-        }else if(ownerName.length()<3){
-            System.out.println("Hesap sahip adı 3 karakterden az olamaz");
-        }else{
-            this.ownerName=ownerName;
-        }
+        setOwnerName(ownerName);
         this.balance=0.00;
-        this.isActive=true;
-
-        
+        this.isActive=true;  
     }
 
     public String getAccountNumber(){
         return accountNumber;
     }
-    public void setAccountNumber(String accountNumber){
-        this.accountNumber=accountNumber;
-    }
+    
     public String getOwnerName(){
         return ownerName;
     }
     public void setOwnerName(String ownerName){
-        this.ownerName=ownerName;
+        if(ownerName==null){
+            System.out.println("Hesap sahip adı null olamaz");
+        }else if(ownerName.length()<OWNER_NAME_MIN_LENGTH){
+            System.out.println("Hesap sahip adı 3 karakterden az olamaz");
+        }else{
+            this.ownerName=ownerName;
+        }
     }
+    
     public double getBalance(){
         return balance;
     }
-    public void setBalance(double balance){
-        this.balance=balance;
+    
+    public void depositByAmount(double amount){
+        if(isActive==false){
+            System.out.println("Hesap kapalı");
+        }else if(amount<0){
+            System.out.println("Miktar pozitif olmalı");
+        }else{
+            this.balance+=amount;
+            System.out.println(amount+" tl yatırıldı toplam bakiye : "+this.balance);
+        }
     }
+    public void withDrowByAmount(double amount){
+        if(isActive==false){
+            System.out.println("Hesap kapalı");
+        }else if(amount<0){
+            System.out.println("Miktar pozitif olmalı");
+        }else if(amount>this.balance){
+            System.out.println("Yetersiz bakiye");
+        }else{
+            this.balance-=amount;
+            System.out.println(amount+" TL çekildi güncel bakiye : "+this.balance);
+        }
+
+    }
+
     public boolean isActive(){
         return isActive;
     }
-    public void setIsActive(boolean isActive){
-        this.isActive=isActive;
-
+    
+    public void closeAccount(){
+        this.isActive=false;
+        System.out.println("Hesap kapatılmıştır");
     }
 
 
